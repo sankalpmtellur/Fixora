@@ -3,90 +3,102 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Zap, Heart, Sparkles, Wrench, Droplets, Paintbrush, Leaf, Scissors, Star, ArrowRight, Home, Truck, Bug, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
+import cleaningImg from '../assets/cleaning.png';
+import electricalImg from '../assets/electrical.png';
+import plumbingImg from '../assets/plumbing.png';
+import paintingImg from '../assets/painting.png';
+import gardeningImg from '../assets/gardening.png';
+import repairImg from '../assets/repair.png';
+import barberImg from '../assets/barber.png';
+import beautyImg from '../assets/beauty.png';
+import carpentryImg from '../assets/carpentery.png';
+import movingImg from '../assets/moving.png';
+import pestImg from '../assets/pest.png';
+import securityImg from '../assets/security.png';
 
 const SERVICE_CATEGORIES = [
   {
     name: 'Cleaning',
     icon: Sparkles,
     desc: 'Deep clean & sanitize',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800',
+    image: cleaningImg,
     color: 'from-blue-500/80',
   },
   {
     name: 'Electrical',
     icon: Zap,
     desc: 'Wiring, fixtures & more',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800',
+    image: electricalImg,
     color: 'from-yellow-500/80',
   },
   {
     name: 'Plumbing',
     icon: Droplets,
     desc: 'Pipes, leaks & drains',
-    image: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=800',
+    image: plumbingImg,
     color: 'from-cyan-500/80',
   },
   {
     name: 'Painting',
     icon: Paintbrush,
     desc: 'Interior & exterior',
-    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=800',
+    image: paintingImg,
     color: 'from-orange-500/80',
   },
   {
     name: 'Gardening',
     icon: Leaf,
     desc: 'Lawn care & landscaping',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&q=80&w=800',
+    image: gardeningImg,
     color: 'from-green-500/80',
   },
   {
     name: 'Repair',
     icon: Wrench,
     desc: 'Home & appliance fixes',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6954?auto=format&fit=crop&q=80&w=800',
+    image: repairImg,
     color: 'from-red-500/80',
   },
   {
     name: 'Barber',
     icon: Scissors,
     desc: 'Haircut & grooming',
-    image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800',
+    image: barberImg,
     color: 'from-purple-500/80',
   },
   {
     name: 'Beauty',
     icon: Star,
     desc: 'Salon & spa at home',
-    image: 'https://images.unsplash.com/photo-1560066984-138daaa4e5d7?auto=format&fit=crop&q=80&w=800',
+    image: beautyImg,
     color: 'from-pink-500/80',
   },
   {
     name: 'Carpentry',
     icon: Home,
     desc: 'Furniture & woodwork',
-    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&q=80&w=800',
+    image: carpentryImg,
     color: 'from-amber-700/80',
   },
   {
     name: 'Moving',
     icon: Truck,
     desc: 'Packing & relocation',
-    image: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&q=80&w=800',
+    image: movingImg,
     color: 'from-indigo-500/80',
   },
   {
     name: 'Pest',
     icon: Bug,
     desc: 'Control & prevention',
-    image: 'https://images.unsplash.com/photo-1626863905121-3b0c0ed7b94c?auto=format&fit=crop&q=80&w=800',
+    image: pestImg,
     color: 'from-lime-600/80',
   },
   {
     name: 'Security',
     icon: Shield,
     desc: 'CCTV & alarm setup',
-    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800',
+    image: securityImg,
     color: 'from-slate-600/80',
   },
 ];
@@ -128,7 +140,7 @@ const HomePage: React.FC = () => {
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-premium">
                 <img 
                   src="https://images.unsplash.com/photo-1521791136064-7986c2959443?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Service Professional" 
+                  alt="" 
                   className="w-full h-auto"
                 />
               </div>
