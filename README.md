@@ -136,6 +136,32 @@ Frontend runs at Vite default URL (usually `http://localhost:5173`).
 
 The frontend API client is configured to call:
 - `http://localhost:5005/api`
+- or `VITE_API_BASE_URL` when provided (recommended for deployment)
+
+## Vercel Deployment
+
+This repo is configured for split deployment on Vercel:
+- `frontend/` as one Vercel project (React SPA)
+- `backend/` as one Vercel project (Node serverless API)
+
+### Deploy Backend on Vercel
+
+Set the Vercel project root directory to `backend`.
+
+Required environment variables:
+- `MONGO_URI`
+- `JWT_SECRET`
+- `CORS_ORIGIN` (comma-separated allowed origins)
+
+### Deploy Frontend on Vercel
+
+Set the Vercel project root directory to `frontend`.
+
+Required environment variable:
+- `VITE_API_BASE_URL=https://<your-backend-domain>/api`
+
+Example:
+- `VITE_API_BASE_URL=https://fixora-api.vercel.app/api`
 
 ## Build for Production
 

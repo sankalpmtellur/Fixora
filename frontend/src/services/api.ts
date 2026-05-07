@@ -1,9 +1,19 @@
 import axios from 'axios';
 
+const resolvedBaseUrl = (() => {
+  const envBase = import.meta.env.VITE_API_BASE_URL?.trim();
+  if (envBase) return envBase.replace(/\/+$/, '');
+
+  if (window.location.hostname === 'localhost') {
+    return 'http://localhost:5005/api';
+  }
+
+  // On Vercel, default to same-origin API path.
+  return '/api';
+})();
+
 const api = axios.create({
-  baseURL: window.location.hostname === 'localhost' 
-    ? 'http://localhost:5005/api' 
-    : 'https://fixora-1q9m.onrender.com/api',
+  baseURL: resolvedBaseUrl,
   headers: {
     'Content-Type': 'application/json',
   },

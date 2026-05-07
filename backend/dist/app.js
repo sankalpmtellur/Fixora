@@ -7,8 +7,15 @@ import express from "express";
 import cors from "cors";
 import routes from "./routes/index.js";
 const app = express();
+const configuredOrigins = process.env.CORS_ORIGIN
+    ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim()).filter(Boolean)
+    : [];
 // ── Global Middleware ─────────────────────────
-app.use(cors());
+app.use(cors({
+    origin: configuredOrigins.length > 0 ? configuredOrigins : "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.json());
 // ── API Routes ────────────────────────────────
 app.use("/api", routes);

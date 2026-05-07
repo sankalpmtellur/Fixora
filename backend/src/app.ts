@@ -8,10 +8,13 @@ import cors from "cors";
 import routes from "./routes/index.js";
 
 const app = express();
+const configuredOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim()).filter(Boolean)
+  : [];
 
 // ── Global Middleware ─────────────────────────
 app.use(cors({
-  origin: "*", // Allows all origins for now. Can be restricted to specific URLs in the future.
+  origin: configuredOrigins.length > 0 ? configuredOrigins : "*",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
